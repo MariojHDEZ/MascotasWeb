@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'core/base.html' %}
+{% block content %}
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProOnliPc Bootstrap Template</title>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="service">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="text-center">
+            <h2>Servicios ofrecidos</h2>
+            <p>A continuacion se muestran algunos de nuetros Servicios<br> 
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        {% for s in servi %}
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <img class="img-fluid" src="{{s.imagen.url}}" width="50%"  alt=""> <br>
+            <div class="panel-body">
+            servicio: {{s.nom}} <br>
+            Precio: {{s.precio}} <br>
+            Descripcion: {{s.descripcion}} <br>
+          </div>
+        
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+</body>
+{% endblock %}
+</html>

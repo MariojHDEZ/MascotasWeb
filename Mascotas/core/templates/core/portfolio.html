@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'core/base.html' %}
+{% block content %}
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProOnliPc Bootstrap Template</title>
+
+   
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="portfolios">
+          <div class="text-center">
+            <h2>Productos ofrecidos</h2>
+            <p>Los productoas ofrecidos que ofrece animalitos se basan en el cuidado y el aseo y belleza de tus mascotas, ademas ofrecos mucha calidad<br> vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
+            </p>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      {% for p in porti %}
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <br>
+           
+            <img class="img-fluid" src="{{p.foto.url}}" alt="" width="30%" height="30%">
+            <div class="panel-body">
+            Producto: {{p.nom_pro}} <br>
+            Precio: {{p.precio}} <br>
+            Descripcion: {{p.desc_pro}} <br>
+            Stock: {{p.stock}} <br>
+           </div>
+           
+      </div>
+      
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+</body>
+{% endblock %}
+</html>
